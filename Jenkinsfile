@@ -1,7 +1,7 @@
 // @Library('shared_libraries_for_pipelines')_
 
-import com.cleverbuilder.GlobalVars
-import com.cleverbuilder.SampleClass
+import com.sougata.GlobalVars
+import com.sougata.SampleClass
 
 def getOS(){
 	String osname = System.getProperty('os.name');
