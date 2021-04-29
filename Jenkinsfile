@@ -1,6 +1,7 @@
 def getOS(){
 	String osname = System.getProperty('os.name');
 	if (osname.startsWith('Windows'))
+		bat "windows"
 		return 'windows';
 	else if (osname.startsWith('Mac'))
 		return 'macosx';
@@ -46,7 +47,7 @@ pipeline {
         stage('test & QA'){
             steps{
                 echo 'test phase'
-			    bat 'echo "Operating system is: $OS"'
+			    // bat 'echo "Operating system is: $OS"'
 				// echo '$OS'
             }
             
