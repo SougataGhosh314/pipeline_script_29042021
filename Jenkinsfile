@@ -19,6 +19,10 @@ pipeline {
         cron('H/2 * * * *')
     }
 	
+	tools {
+        maven 'apache-maven-3.8.1' 
+    }
+	
 	environment { 
         OS = getOS()
     }
