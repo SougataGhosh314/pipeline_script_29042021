@@ -20,7 +20,7 @@ pipeline {
     }
 	
 	tools {
-        maven 'C:\Users\Sougata Ghosh\Development software sources or binaries\apache-maven-3.8.1' 
+        maven 'C:/Users/Sougata Ghosh/Development software sources or binaries/apache-maven-3.8.1' 
     }
 	
 	environment { 
