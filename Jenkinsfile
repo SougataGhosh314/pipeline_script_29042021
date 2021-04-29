@@ -1,4 +1,17 @@
 pipeline {
+
+	def getOs(){
+		String osname = System.getProperty('os.name');
+		if (osname.startsWith('Windows'))
+			return 'windows';
+		else if (osname.startsWith('Mac'))
+			return 'macosx';
+		else if (osname.contains('nux'))
+			return 'linux';
+		else
+			throw new Exception("Unsupported os: ${osname}");
+	}
+	
     agent {label 'slave_1'}
 
     stages {
@@ -26,6 +39,7 @@ pipeline {
         stage('test & QA'){
             steps{
                 echo 'test phase'
+				echo getOS()
             }
             
         }
@@ -51,6 +65,12 @@ pipeline {
                     // // archiveArtifacts 'target/*.jar'
                     // archiveArtifacts 'target/*.war'
                 }
+				
+				post { 
+					always { 
+						echo 'This runs always, no matter the state of the build'
+					}
+				}
             }
         }
 
