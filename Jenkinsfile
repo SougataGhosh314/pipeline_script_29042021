@@ -42,6 +42,7 @@ pipeline {
 		stage('init'){
 			steps{
 				echo "Hello ${params.PERSON}"
+				echo "the OS: ${params.OPSYS}"
 				echo "Biography: ${params.BIOGRAPHY}"
 				echo "Toggle: ${params.TOGGLE}"
 				echo "Choice: ${params.CHOICE}"
