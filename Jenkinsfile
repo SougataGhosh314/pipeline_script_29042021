@@ -25,6 +25,8 @@ pipeline {
 	
 	parameters {
         string(name: 'PERSON', defaultValue: 'Sougata Ghosh', description: 'night owl')
+		
+		string(name: 'OPSYS', defaultValue: '$OS', description: 'the OS')
 
         text(name: 'BIOGRAPHY', defaultValue: 'This is my biography', description: 'some biography...')
 
