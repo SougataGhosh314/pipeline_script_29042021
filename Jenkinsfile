@@ -1,7 +1,7 @@
 def getOS(){
 	String osname = System.getProperty('os.name');
 	if (osname.startsWith('Windows')) {
-		bat "windows";
+		bat "echo 'windows'";
 		return 'windows';
 	}
 	else if (osname.startsWith('Mac'))
