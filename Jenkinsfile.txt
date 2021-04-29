@@ -1,0 +1,58 @@
+pipeline {
+    agent {label 'slave_1'}
+
+    stages {
+        
+        stage('clone'){
+            steps{
+                git branch: 'master', url: 'https://github.com/SougataGhosh314/spring_security_jpa.git'
+            }
+        }
+        
+        stage('build'){
+            steps{
+                parallel (
+                    "Taskone" : {
+                        echo 'Taskone'
+                    },
+                    "Tasktwo" : {
+                        echo 'Taskone'
+                    }
+                )
+            }
+           
+        }
+        
+        stage('test & QA'){
+            steps{
+                echo 'test phase'
+            }
+            
+        }
+        
+        stage('deploy'){
+            steps{
+                script{
+                    try {
+                        bat 'mvn clean'
+                        bat 'mvn install'
+                    }catch (exc) {
+                        echo 'Something didn\'t work and got some exceptions'
+                    }
+                }
+            }
+            
+            post {
+                // If Maven was able to run the tests, even if some of the test
+                // failed, record the test results and archive the jar file.
+                success {
+                    echo 'success'
+                    // junit '**/target/surefire-reports/TEST-*.xml'
+                    // // archiveArtifacts 'target/*.jar'
+                    // archiveArtifacts 'target/*.war'
+                }
+            }
+        }
+
+    }
+}
