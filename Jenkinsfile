@@ -51,7 +51,9 @@ pipeline {
     stages {
 	
 		stage('shared_libraries'){
-			sayHello 'Ghosh'
+			steps{
+				sayHello 'Ghosh'
+			}
 		}
 	
 		stage('init'){
