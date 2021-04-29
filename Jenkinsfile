@@ -102,7 +102,7 @@ pipeline {
            
         }
         
-        stage('test & QA'){
+        stage('TEST'){
             steps{
 			
 				script {
@@ -117,6 +117,15 @@ pipeline {
 				// echo '$OS'
             }
             
+        }
+		
+		stage('Q.A.') {
+            when {
+                branch 'main'
+            }
+            steps {
+                echo 'in 'main' branch'
+            }
         }
         
         stage('deploy'){
