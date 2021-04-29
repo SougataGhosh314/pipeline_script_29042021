@@ -1,4 +1,4 @@
-@Library('shared_libraries_for_pipelines')_
+// @Library('shared_libraries_for_pipelines')_
 
 def getOS(){
 	String osname = System.getProperty('os.name');
@@ -16,6 +16,10 @@ def getOS(){
 
 pipeline {	
     agent {label 'slave_1'}
+	
+	libraries {
+		lib('shared_libraries_for_pipelines')
+	}
 	
 	triggers {
         cron('H/2 * * * *')
