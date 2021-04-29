@@ -1,4 +1,4 @@
-def getOs(){
+def getOS(){
 	String osname = System.getProperty('os.name');
 	if (osname.startsWith('Windows'))
 		return 'windows';
