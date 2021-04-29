@@ -26,6 +26,7 @@ pipeline {
 	
 	triggers {
         cron('H/2 * * * *')
+		pollSCM('H/5 * * * *')
     }
 	
 	tools {
