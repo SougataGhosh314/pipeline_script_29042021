@@ -1,3 +1,5 @@
+@Library('shared_libraries_for_pipelines')_
+
 def getOS(){
 	String osname = System.getProperty('os.name');
 	if (osname.startsWith('Windows')) {
@@ -47,6 +49,10 @@ pipeline {
     }
 
     stages {
+	
+		stage('shared_libraries'){
+			sayHello 'Ghosh'
+		}
 	
 		stage('init'){
 			steps{
