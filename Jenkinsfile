@@ -124,7 +124,7 @@ pipeline {
                 branch 'main'
             }
             steps {
-                echo 'in 'main' branch'
+                echo 'in main branch'
             }
         }
         
