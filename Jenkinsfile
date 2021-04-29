@@ -121,7 +121,7 @@ pipeline {
 		
 		stage('Q.A.') {
             when {
-                branch 'main'
+                branch 'master'
             }
             steps {
                 echo 'in main branch'
