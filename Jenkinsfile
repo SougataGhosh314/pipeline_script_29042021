@@ -57,6 +57,13 @@ pipeline {
 		stage('shared_libraries'){
 			steps{
 				sayHello 'Ghosh'
+				echo 'The value of batman is : ' + GlobalVars.batman
+				script {
+                    def person = new SampleClass()
+                    person.age = 13
+                    person.increaseAge(10)
+                    echo 'Incremented age, is now : ' + person.age
+                }
 			}
 		}
 	
