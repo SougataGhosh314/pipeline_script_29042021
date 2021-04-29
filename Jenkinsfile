@@ -12,6 +12,10 @@ def getOs(){
 
 pipeline {	
     agent {label 'slave_1'}
+	
+	environment { 
+        OS = getOS()
+    }
 
     stages {
         
@@ -38,7 +42,8 @@ pipeline {
         stage('test & QA'){
             steps{
                 echo 'test phase'
-				echo 'the OS is: $(getOS)'
+				
+				echo '$OS'
             }
             
         }
