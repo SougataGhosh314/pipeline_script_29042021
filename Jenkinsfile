@@ -38,7 +38,7 @@ pipeline {
         stage('test & QA'){
             steps{
                 echo 'test phase'
-				echo getOS()
+				echo 'the OS is: $(getOS)'
             }
             
         }
