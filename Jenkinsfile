@@ -15,6 +15,10 @@ def getOS(){
 pipeline {	
     agent {label 'slave_1'}
 	
+	triggers {
+        cron('H/2 * * * *')
+    }
+	
 	environment { 
         OS = getOS()
     }
@@ -26,7 +30,7 @@ pipeline {
 	parameters {
         string(name: 'PERSON', defaultValue: 'Sougata Ghosh', description: 'night owl')
 		
-		string(name: 'OPSYS', defaultValue: '$OS', description: 'the OS')
+		// string(name: 'OPSYS', defaultValue: '$OS', description: 'the OS')
 
         text(name: 'BIOGRAPHY', defaultValue: 'This is my biography', description: 'some biography...')
 
@@ -42,7 +46,7 @@ pipeline {
 		stage('init'){
 			steps{
 				echo "Hello ${params.PERSON}"
-				echo "the OS: ${params.OPSYS}"
+				// echo "the OS: ${params.OPSYS}"
 				echo "Biography: ${params.BIOGRAPHY}"
 				echo "Toggle: ${params.TOGGLE}"
 				echo "Choice: ${params.CHOICE}"
