@@ -42,7 +42,9 @@ pipeline {
         stage('test & QA'){
             steps{
                 echo 'test phase'
-				bat 'echo "Operating system is: $OS"'
+				if ($OS == 'windows')
+					echo 'windows'
+				// bat 'echo "Operating system is: $OS"'
 				// echo '$OS'
             }
             
