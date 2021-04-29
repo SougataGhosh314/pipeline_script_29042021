@@ -16,6 +16,10 @@ pipeline {
 	environment { 
         OS = getOS()
     }
+	
+	options {
+        timeout(time: 5, unit: 'MINUTES') 
+    }
 
     stages {
         
@@ -42,9 +46,7 @@ pipeline {
         stage('test & QA'){
             steps{
                 echo 'test phase'
-				if ($OS == 'windows')
-					echo 'windows'
-				// bat 'echo "Operating system is: $OS"'
+			    bat 'echo "Operating system is: $OS"'
 				// echo '$OS'
             }
             
