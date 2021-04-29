@@ -90,10 +90,10 @@ pipeline {
         
         stage('deploy'){
 		
-			when {
-                branch 'master'
-                environment name: 'DEPLOY_TO', value: 'master deployments'
-            }
+			// when {
+            //     branch 'master'
+            //     environment name: 'DEPLOY_TO', value: 'master deployments'
+            // }
 			
             steps{
                 script{
