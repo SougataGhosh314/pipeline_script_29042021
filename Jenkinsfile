@@ -65,10 +65,8 @@ pipeline {
                     // archiveArtifacts 'target/*.war'
                 }
 				
-				post { 
-					always { 
-						echo 'This runs always, no matter the state of the build'
-					}
+				always { 
+					echo 'This runs always, no matter the state of the build'
 				}
             }
         }
