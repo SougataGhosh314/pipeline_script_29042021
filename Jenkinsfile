@@ -1,5 +1,8 @@
 // @Library('shared_libraries_for_pipelines')_
 
+import com.cleverbuilder.GlobalVars
+import com.cleverbuilder.SampleClass
+
 def getOS(){
 	String osname = System.getProperty('os.name');
 	if (osname.startsWith('Windows')) {
