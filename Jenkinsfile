@@ -42,8 +42,8 @@ pipeline {
         stage('test & QA'){
             steps{
                 echo 'test phase'
-				
-				echo '$OS'
+				bat 'echo "Operating system is: $OS"'
+				// echo '$OS'
             }
             
         }
