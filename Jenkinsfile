@@ -22,8 +22,28 @@ pipeline {
 	options {
         timeout(time: 5, unit: 'MINUTES') 
     }
+	
+	parameters {
+        string(name: 'PERSON', defaultValue: 'Sougata Ghosh', description: 'night owl')
+
+        text(name: 'BIOGRAPHY', defaultValue: '', description: 'some biography...')
+
+        booleanParam(name: 'TOGGLE', defaultValue: true, description: 'Toggle switch')
+
+        choice(name: 'CHOICE', choices: ['One', 'Two', 'Three'], description: 'Pick something')
+
+        password(name: 'PASSWORD', defaultValue: 'SECRET', description: 'Enter a password')
+    }
 
     stages {
+	
+		stage('init'){
+			echo "Hello ${params.PERSON}"
+			echo "Biography: ${params.BIOGRAPHY}"
+			echo "Toggle: ${params.TOGGLE}"
+			echo "Choice: ${params.CHOICE}"
+			echo "Password: ${params.PASSWORD}"
+		}
         
         stage('clone'){
             steps{
