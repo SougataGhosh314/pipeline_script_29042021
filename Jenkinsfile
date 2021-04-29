@@ -1,17 +1,16 @@
-pipeline {
+def getOs(){
+	String osname = System.getProperty('os.name');
+	if (osname.startsWith('Windows'))
+		return 'windows';
+	else if (osname.startsWith('Mac'))
+		return 'macosx';
+	else if (osname.contains('nux'))
+		return 'linux';
+	else
+		throw new Exception("Unsupported os: ${osname}");
+}
 
-	def getOs(){
-		String osname = System.getProperty('os.name');
-		if (osname.startsWith('Windows'))
-			return 'windows';
-		else if (osname.startsWith('Mac'))
-			return 'macosx';
-		else if (osname.contains('nux'))
-			return 'linux';
-		else
-			throw new Exception("Unsupported os: ${osname}");
-	}
-	
+pipeline {	
     agent {label 'slave_1'}
 
     stages {
