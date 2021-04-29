@@ -26,7 +26,7 @@ pipeline {
 	parameters {
         string(name: 'PERSON', defaultValue: 'Sougata Ghosh', description: 'night owl')
 
-        text(name: 'BIOGRAPHY', defaultValue: '', description: 'some biography...')
+        text(name: 'BIOGRAPHY', defaultValue: 'This is my biography', description: 'some biography...')
 
         booleanParam(name: 'TOGGLE', defaultValue: true, description: 'Toggle switch')
 
