@@ -1,4 +1,4 @@
-// @Library('shared_libraries_for_pipelines')_
+@Library('shared_libraries_for_pipelines')_
 
 import com.sougata.GlobalVars
 import com.sougata.SampleClass
