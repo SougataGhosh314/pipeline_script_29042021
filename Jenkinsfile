@@ -81,6 +81,14 @@ pipeline {
         
         stage('test & QA'){
             steps{
+			
+				script {
+					def browsers = ['chrome', 'firefox', 'opera', 'edge', 'safari']
+                    for (int i = 0; i < browsers.size(); ++i) {
+                        echo "Testing the ${browsers[i]} browser"
+                    }
+				}
+				
                 echo 'test phase'
 			    // bat 'echo "Operating system is: $OS"'
 				// echo '$OS'
