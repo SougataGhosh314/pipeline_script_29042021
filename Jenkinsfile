@@ -36,6 +36,7 @@ pipeline {
 	
 	environment { 
         OS = getOS()
+		JAVA = 'fun'
     }
 	
 	options {
@@ -121,7 +122,7 @@ pipeline {
 		
 		stage('Q.A.') {
             when {
-                true
+                environment name: 'JAVA', value: 'fun'
             }
             steps {
                 echo 'in main branch'
