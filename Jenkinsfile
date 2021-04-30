@@ -61,8 +61,7 @@ pipeline {
 	
 		stage('shared_libraries'){
 			steps{
-				sayHello(name: "Sougata Ghosh", dayOfWeek: "Friday")
-				// , topic: "Shared Libraries"
+				sayHello(name: "Sougata Ghosh", dayOfWeek: "Friday", topic: "Shared Libraries")
 				echo 'The value of batman is : ' + GlobalVars.batman
 				script {
                     def person = new SampleClass()
